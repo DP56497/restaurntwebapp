@@ -17,7 +17,7 @@ function Menu() {
 
   const fetchFoodItems = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/food");
+      const res = await axios.get("https://restaurntwebappb.onrender.com/api/food");
       setFoodItems(res.data);
 
       // ✅ Initialize quantity for each item to 1
@@ -54,7 +54,7 @@ function Menu() {
       const restaurantName = item.restaurantName;
       const quantity = quantities[item._id] || 1;
 
-      await axios.post("http://localhost:5000/api/orders", {
+      await axios.post("https://restaurntwebappb.onrender.com/api/orders", {
         name: item.name,
         price: item.price,
         imageUrl: item.imageUrl,
