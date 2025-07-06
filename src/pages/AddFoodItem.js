@@ -68,7 +68,7 @@ function AddFoodItem() {
       setUploading(true);
       setUploadProgress(0);
 
-      await axios.post("http://localhost:5000/api/food/upload", formData, {
+      await axios.post("https://restaurntwebappb.onrender.com/api/food/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
         onUploadProgress: (progressEvent) => {
           const percent = Math.round((progressEvent.loaded * 100) / progressEvent.total);
@@ -90,7 +90,7 @@ function AddFoodItem() {
   };
   const deleteFoodItem = async (id) => {
     try{
-      await axios.delete(`http://localhost:5000/api/food/${id}`);
+      await axios.delete(`https://restaurntwebappb.onrender.com/api/food/${id}`);
       setFoodItems((prev) => prev.filter((item) => item._id !== id));
       alert("Food item deleted SuccessFully");
     }catch(err){
