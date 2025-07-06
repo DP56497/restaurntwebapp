@@ -20,8 +20,8 @@ function Orders() {
 
       const url =
         category === "owner"
-          ? "http://localhost:5000/api/orders"
-          : `http://localhost:5000/api/orders?email=${customerEmail}`;
+          ? "https://restaurntwebappb.onrender.com/api/orders"
+          : `https://restaurntwebappb.onrender.com/api/orders?email=${customerEmail}`;
 
       const res = await axios.get(url);
       setOrders(res.data);
@@ -32,7 +32,7 @@ function Orders() {
 
   const deleteOrder = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/orders/${id}`);
+      await axios.delete(`https://restaurntwebappb.onrender.com/api/orders/${id}`);
       setOrders((prev) => prev.filter((order) => order._id !== id));
     } catch (err) {
       console.error("Error deleting order:", err);
