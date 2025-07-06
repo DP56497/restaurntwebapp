@@ -24,8 +24,8 @@ function AddFoodItem() {
       const ownerEmail = localStorage.getItem("email");
       const url =
         category === "customer"
-          ? "http://localhost:5000/api/food"
-          : `http://localhost:5000/api/food?ownerEmail=${ownerEmail}`;
+          ? "https://restaurntwebappb.onrender.com/api/food"
+          : `https://restaurntwebappb.onrender.com/api/food?ownerEmail=${ownerEmail}`;
       const res = await axios.get(url);
       setFoodItems(res.data);
     } catch (err) {
