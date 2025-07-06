@@ -16,7 +16,7 @@ function OrderRecords() {
     try {
       const restaurantName = localStorage.getItem("restaurantName");
       const res = await axios.get(
-        `http://localhost:5000/api/orders?restaurantName=${restaurantName}`
+        `https://restaurntwebappb.onrender.com/api/orders?restaurantName=${restaurantName}`
       );
       setOrders(res.data);
     } catch (err) {
